@@ -1,0 +1,1927 @@
+﻿{
+  "dialogs": [
+    {
+      "id": "PersonDialogs",
+      "intents": [
+        {
+          "intent": "PersonInfo",
+          "templates": [
+            {
+              "items": [
+                {
+                  "id": "head",
+                  "head": true,
+                  "POS": "NOUN",
+                  "Case": "nomn",
+                  "Number": "sing",
+                  "set": "Person"
+                }
+              ]
+            },
+            {
+              "description": "Контакты <Person>",
+              "items": [
+                {
+                  "id": "head",
+                  "head": true,
+                  "lemma": {
+                    "token": "контакт",
+                    "POS": "NOUN",
+                    "Gender": "masc"
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "gent"
+                }
+              ]
+            },
+            {
+              "description": "Контактная информация <Person>",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "Контактная",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "информация",
+                    "POS": "NOUN",
+                    "Number": "sing",
+                    "Gender": "femn"
+                  },
+                  "id": "head",
+                  "head": true
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "gent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PhoneByPerson",
+          "templates": [
+            {
+              "description": "<WhatPhone> <UPerson>?",
+              "items": [
+                {
+                  "head": true,
+                  "POS": "NOUN",
+                  "Case": "nomn",
+                  "set": "WhatPhone"
+                },
+                { "set": "UPerson" }
+              ]
+            },
+            {
+              "description": "Как позвонить <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "как",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "позвонить",
+                    "POS": "INFN"
+                  }
+                },
+                {
+                  "POS": "NOUN",
+                  "Case": "datv",
+                  "set": "Person"
+                }
+              ]
+            },
+            {
+              "description": "Как звонить <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "как",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "звонить",
+                    "POS": "INFN"
+                  }
+                },
+                {
+                  "POS": "NOUN",
+                  "Case": "datv",
+                  "set": "Person"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "OfficeByPerson",
+          "templates": [
+            {
+              "description": "<OfficeName> <Person>?",
+              "items": [
+                {
+                  "set": "OfficeName",
+                  "POS": "NOUN"
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "gent"
+                }
+              ]
+            },
+            {
+              "description": "Какой <OfficeName> в которой <BeInOffice> <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "Какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "POS": "NOUN"
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "которой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "-2",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "set": "BeInOffice",
+                  "POS": "VERB",
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Где находится <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "Где",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "находится",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Где сидит <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "Где",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "сидит",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Где найти <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "Где",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "найти",
+                    "POS": "VERB"
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "accs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PersonByDepartment",
+          "templates": [
+            {
+              "description": "Кто работает <InDepartment>?",
+              "items": [
+                {
+                  "id": "root",
+                  "head": true,
+                  "lemma": {
+                    "token": "кто",
+                    "POS": "NPRO",
+                    "Gender": "masc"
+                  },
+                  "Number": "sing",
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "root",
+                    "features": [ "Number" ]
+                  }
+                },
+                { "set": "InDepartment" }
+              ]
+            },
+            {
+              "description": "Сотрудник <Department>?",
+              "items": [
+                {
+                  "id": "root",
+                  "head": true,
+                  "lemma": {
+                    "token": "сотрудник",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Department",
+                  "POS": "NOUN",
+                  "Case": "gent"
+                }
+              ]
+            },
+            {
+              "description": "Работник <Department>?",
+              "items": [
+                {
+                  "id": "root",
+                  "head": true,
+                  "lemma": {
+                    "token": "работник",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Department",
+                  "POS": "NOUN",
+                  "Case": "gent"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "EmailByPerson",
+          "templates": [
+            {
+              "description": "Какой адрес электронной почты <UPerson>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "адрес",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "электронной",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "почты",
+                    "POS": "NOUN",
+                    "Gender": "femn",
+                    "Number": "sing",
+                    "Case": "gent"
+                  },
+                  "Case": "gent"
+                },
+                {
+                  "set": "UPerson"
+                }
+              ]
+            },
+            {
+              "description": "Какой e-mail <UPerson>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "e-mail"
+                  }
+                },
+                {
+                  "set": "UPerson"
+                }
+              ]
+            },
+            {
+              "description": "Куда отправить письмо для <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "куда",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "отправить",
+                    "POS": "INFN"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "письмо",
+                    "POS": "NOUN",
+                    "Gender": "neut",
+                    "Number": "sing",
+                    "Case": "accs"
+                  },
+                  "Case": "accs"
+                },
+                {
+                  "set": "ForPerson"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "DepartmentByPerson",
+          "templates": [
+            {
+              "description": "В каком отделе работает <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "каком",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "отделе",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "loct"
+                  },
+                  "Case": "loct"
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "В каком подразделении работает <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "каком",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "подразделении",
+                    "POS": "NOUN",
+                    "Gender": "neut",
+                    "Number": "sing",
+                    "Case": "loct"
+                  },
+                  "Case": "loct"
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Где работает <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "где",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Отдел, в котором работает <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "отдел",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "котором",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "-2",
+                    "features": [ "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Подразделение, в котором работает <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "подразделение",
+                    "POS": "NOUN",
+                    "Gender": "neut",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "котором",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "-2",
+                    "features": [ "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "OfficeByDepartment",
+          "templates": [
+            {
+              "description": "Какой <OfficeName> в которой находится отдел <Department>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "POS": "NOUN",
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "котором",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "-2",
+                    "features": [ "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "находится",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "отдел",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Department",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Где находится отдел <Department>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "где",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "находится",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "отдел",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Department",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PhoneByDepartment",
+          "templates": [
+            {
+              "description": "<WhatPhone> <InDepartment>?",
+              "items": [
+                {
+                  "head": true,
+                  "POS": "NOUN",
+                  "Case": "nomn",
+                  "set": "WhatPhone"
+                },
+                { "set": "InDepartment" }
+              ]
+            },
+            {
+              "description": "Как позвонить <InDepartment>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "как",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "позвонить",
+                    "POS": "INFN"
+                  }
+                },
+                { "set": "InDepartment" }
+              ]
+            },
+            {
+              "description": "Как звонить в отдел <Department>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "как",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "звонить",
+                    "POS": "INFN"
+                  }
+                },
+                { "set": "InDepartment" }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PersonByOffice",
+          "templates": [
+            {
+              "description": "Кто <BeInOffice> в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "кто",
+                    "POS": "NPRO"
+                  }
+                },
+                { "set": "BeInOffice" },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PersonByPhone",
+          "templates": [
+            {
+              "description": "У кого <PhoneName> <Phone>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "у",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "кого",
+                    "POS": "NPRO",
+                    "Number": "sing",
+                    "Case": "gent"
+                  }
+                },
+                {
+                  "set": "PhoneName",
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Phone",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Чей <PhoneName> <Phone>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "чей",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "set": "PhoneName",
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Phone",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "HowMutchInOffice",
+          "templates": [
+            {
+              "description": "Сколько человек <BeInOffice> в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "сколько",
+                    "POS": "NUMR",
+                    "Case": "nomn"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "человек",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "plur",
+                    "Case": "gent"
+                  },
+                  "Number": "plur",
+                  "Case": "gent"
+                },
+                { "set": "BeInOffice" },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "HowMutchInDepartment",
+          "templates": [
+            {
+              "description": "Сколько человек работает в отделе <Department>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "сколько",
+                    "POS": "NUMR",
+                    "Case": "nomn"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "человек",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "plur",
+                    "Case": "gent"
+                  },
+                  "Number": "plur",
+                  "Case": "gent"
+                },
+                {
+                  "lemma": {
+                    "token": "работает",
+                    "POS": "VERB"
+                  }
+                },
+                { "set": "InDepartment" }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "DepartmentByOffice",
+          "templates": [
+            {
+              "description": "Какой отдел находится в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "отдел",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "находится",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "-1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Что находится в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "что",
+                    "POS": "NPRO",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "находится",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "-1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PhoneByOffice",
+          "templates": [
+            {
+              "description": "Какой <PhoneName> в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "set": "PhoneName",
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Как позвонить в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "как",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "позвонить",
+                    "POS": "INFN"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Как звонить в <OfficeName> номер <Office>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "как",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "звонить",
+                    "POS": "INFN"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "в",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "set": "OfficeName",
+                  "Case": "accs"
+                },
+                {
+                  "lemma": {
+                    "token": "номер",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "Office",
+                  "Case": "nomn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PersonAge",
+          "templates": [
+            {
+              "description": "Сколько лет <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "сколько",
+                    "POS": "NUMR",
+                    "Case": "nomn"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "лет",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "plur",
+                    "Case": "gent"
+                  },
+                  "Number": "plur",
+                  "Case": "gent"
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "datv"
+                }
+              ]
+            },
+            {
+              "description": "Какой возраст у <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какой",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "возраст",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "set": "UPerson"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "intent": "PersonDateOfBirth",
+          "templates": [
+            {
+              "description": "Когда родился <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "когда",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "родился",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "set": "Person",
+                  "POS": "NOUN",
+                  "Number": "sing",
+                  "Case": "nomn"
+                }
+              ]
+            },
+            {
+              "description": "Какая дата рождения у <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "какая",
+                    "POS": "ADJF"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Case", "Number", "Gender" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "дата",
+                    "POS": "NOUN",
+                    "Gender": "femn",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "рождения",
+                    "POS": "NOUN",
+                    "Gender": "neut",
+                    "Number": "sing",
+                    "Case": "gent"
+                  },
+                  "Case": "gent"
+                },
+                {
+                  "set": "UPerson"
+                }
+              ]
+            },
+            {
+              "description": "Когда день рождения у <Person>?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "когда",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "день",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "рождения",
+                    "POS": "NOUN",
+                    "Gender": "neut",
+                    "Number": "sing",
+                    "Case": "gent"
+                  },
+                  "Case": "gent"
+                },
+                {
+                  "set": "UPerson"
+                }
+              ]
+            },
+            {
+              "description": "У кого сегодня завтра вчера есть день рождения?",
+              "items": [
+                {
+                  "lemma": {
+                    "token": "у",
+                    "POS": "PREP"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "кого",
+                    "POS": "NPRO",
+                    "Number": "sing",
+                    "Case": "gent"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "сегодня",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "завтра",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "вчера",
+                    "POS": "ADVB"
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "есть",
+                    "POS": "VERB"
+                  },
+                  "syncTo": {
+                    "target": "+1",
+                    "features": [ "Number" ]
+                  }
+                },
+                {
+                  "lemma": {
+                    "token": "день",
+                    "POS": "NOUN",
+                    "Gender": "masc",
+                    "Number": "sing",
+                    "Case": "nomn"
+                  },
+                  "Case": "nomn"
+                },
+                {
+                  "lemma": {
+                    "token": "рождения",
+                    "POS": "NOUN",
+                    "Gender": "neut",
+                    "Number": "sing",
+                    "Case": "gent"
+                  },
+                  "Case": "gent"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "templates": [
+        {
+          "description": "какой <PhoneName>",
+          "set": "WhatPhone",
+          "items": [
+            {
+              "lemma": {
+                "token": "какой",
+                "POS": "ADJF"
+              },
+              "syncTo": {
+                "target": "+1",
+                "features": [ "Case", "Number", "Gender" ]
+              }
+            },
+            {
+              "head": true,
+              "POS": "NOUN",
+              "set": "PhoneName"
+            }
+          ]
+        },
+        {
+          "sourceTemplateId": "у <нет чего(кого)?>",
+          "set": "UPerson",
+          "overridedItems": [
+            {
+              "sourceItemId": "NOUN",
+              "set": "Person"
+            }
+          ]
+        },
+        {
+          "sourceTemplateId": "для <нет чего(кого)?>",
+          "set": "ForPerson",
+          "overridedItems": [
+            {
+              "sourceItemId": "NOUN",
+              "set": "Person"
+            }
+          ]
+        },
+        {
+          "set": "BeInOffice",
+          "description": "работает",
+          "items": [
+            {
+              "lemma": {
+                "token": "работает",
+                "POS": "VERB"
+              }
+            }
+          ]
+        },
+        {
+          "set": "BeInOffice",
+          "description": "сидит",
+          "items": [
+            {
+              "lemma": {
+                "token": "сидит",
+                "POS": "VERB"
+              }
+            }
+          ]
+        },
+        {
+          "set": "BeInOffice",
+          "description": "находится",
+          "items": [
+            {
+              "lemma": {
+                "token": "находится",
+                "POS": "VERB"
+              }
+            }
+          ]
+        },
+        {
+          "sourceTemplateId": "в <о чем(ком)?>",
+          "set": "InDepartment",
+          "overridedItems": [
+            {
+              "sourceItemId": "NOUN",
+              "set": "DepartmentName"
+            }
+          ]
+        },
+        {
+          "description": "отдел <Department>",
+          "set": "DepartmentName",
+          "items": [
+            {
+              "id": "root",
+              "head": true,
+              "virtual": true,
+              "POS": "NOUN",
+              "Number": "sing"
+            },
+            {
+              "lemma": {
+                "token": "отдел",
+                "POS": "NOUN",
+                "Gender": "masc",
+                "Number": "sing"
+              },
+              "syncTo": {
+                "target": "root",
+                "features": [ "Case" ]
+              }
+            },
+            {
+              "set": "Department",
+              "POS": "NOUN",
+              "syncTo": {
+                "target": "root",
+                "features": [ "Case" ]
+              }
+            }
+          ]
+        },
+        {
+          "set": "OfficeSynonim",
+          "description": "офис",
+          "items": [
+            {
+              "lemma": {
+                "token": "офис",
+                "POS": "NOUN",
+                "Gender": "masc",
+                "Number": "sing",
+                "Case": "nomn"
+              }
+            }
+          ]
+        },
+        {
+          "set": "OfficeSynonim",
+          "description": "комната",
+          "items": [
+            {
+              "lemma": {
+                "token": "комната",
+                "POS": "NOUN",
+                "Gender": "femn",
+                "Number": "sing",
+                "Case": "nomn"
+              }
+            }
+          ]
+        },
+        {
+          "set": "OfficeSynonim",
+          "description": "кабинет",
+          "items": [
+            {
+              "lemma": {
+                "token": "кабинет",
+                "POS": "NOUN",
+                "Gender": "masc",
+                "Number": "sing",
+                "Case": "nomn"
+              }
+            }
+          ]
+        },
+        {
+          "set": "OfficeNumber",
+          "description": "номер <OfficeSynonim>",
+          "items": [
+            {
+              "lemma": {
+                "token": "номер",
+                "POS": "NOUN",
+                "Gender": "masc",
+                "Number": "sing",
+                "Case": "nomn"
+              },
+              "Case": "nomn"
+            },
+            {
+              "set": "OfficeSynonim",
+              "Case": "gent"
+            }
+          ]
+        },
+        {
+          "set": "OfficeName",
+          "description": "<OfficeSynonim>",
+          "items": [
+            {
+              "set": "OfficeSynonim",
+              "Case": "nomn"
+            }
+          ]
+        },
+        {
+          "set": "OfficeName",
+          "description": "<OfficeNumber>",
+          "items": [
+            {
+              "set": "OfficeNumber",
+              "Case": "nomn"
+            }
+          ]
+        },
+        {
+          "description": "телефон",
+          "set": "PhoneSynonim",
+          "items": [
+            {
+              "lemma": {
+                "token": "телефон",
+                "POS": "NOUN"
+              },
+              "head": true,
+              "POS": "NOUN"
+            }
+          ]
+        },
+        {
+          "description": "номер <PhoneSynonim>",
+          "set": "PhoneNumber",
+          "items": [
+            {
+              "lemma": {
+                "token": "номер"
+              },
+              "head": true,
+              "POS": "NOUN"
+            },
+            {
+              "POS": "NOUN",
+              "Case": "gent",
+              "set": "PhoneSynonim"
+            }
+          ]
+        },
+        {
+          "description": "<PhoneSynonim>",
+          "set": "PhoneName",
+          "items": [
+            {
+              "head": true,
+              "POS": "NOUN",
+              "set": "PhoneSynonim"
+            }
+          ]
+        },
+        {
+          "description": "<PhoneNumber>",
+          "set": "PhoneName",
+          "items": [
+            {
+              "head": true,
+              "POS": "NOUN",
+              "set": "PhoneNumber"
+            }
+          ]
+        }
+      ],
+      "eventhandlers": [
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PersonInfo",
+          "action": "GetPersonInfoAnswer"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PhoneByPerson",
+          "action": "GetPhoneByPerson"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "OfficeByPerson",
+          "action": "GetOfficeByPerson"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PersonByDepartment",
+          "action": "GetPersonByDepartment"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "EmailByPerson",
+          "action": "GetEmailByPerson"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "DepartmentByPerson",
+          "action": "GetDepartmentByPerson"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "OfficeByDepartment",
+          "action": "GetOfficeByDepartment"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PhoneByDepartment",
+          "action": "GetPhoneByDepartment"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PersonByOffice",
+          "action": "GetPersonByOffice"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PersonByPhone",
+          "action": "GetPersonByPhone"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "HowMutchInOffice",
+          "action": "GetHowMutchInOffice"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "HowMutchInDepartment",
+          "action": "GetHowMutchInDepartment"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "DepartmentByOffice",
+          "action": "GetDepartmentByOffice"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PhoneByOffice",
+          "action": "GetPhoneByOffice"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PersonAge",
+          "action": "GetPersonAge"
+        },
+        {
+          "event": "TopIntentOnMessageEnd",
+          "intent": "PersonDateOfBirth",
+          "action": "GetPersonDateOfBirth"
+        },
+        {
+          "event": "NoIntentOnMessageEnd",
+          "action": "OnNoIntent"
+        },
+        {
+          "event": "ActionError",
+          "action": "OnActionError"
+        }
+      ],
+      "actions": [
+        {
+          "id": "GetPersonInfoAnswer",
+          "codefile": "GetPersonInfoAnswer.js"
+        },
+        {
+          "id": "GetPhoneByPerson",
+          "codefile": "GetPhoneByPerson.js"
+        },
+        {
+          "id": "GetOfficeByPerson",
+          "codefile": "GetOfficeByPerson.js"
+        },
+        {
+          "id": "GetPersonByDepartment",
+          "codefile": "GetPersonByDepartment.js"
+        },
+        {
+          "id": "GetEmailByPerson",
+          "codefile": "GetEmailByPerson.js"
+        },
+        {
+          "id": "GetDepartmentByPerson",
+          "codefile": "GetDepartmentByPerson.js"
+        },
+        {
+          "id": "GetOfficeByDepartment",
+          "codefile": "GetOfficeByDepartment.js"
+        },
+        {
+          "id": "GetPhoneByDepartment",
+          "codefile": "GetPhoneByDepartment.js"
+        },
+        {
+          "id": "GetPersonByOffice",
+          "codefile": "GetPersonByOffice.js"
+        },
+        {
+          "id": "GetPersonByPhone",
+          "codefile": "GetPersonByPhone.js"
+        },
+        {
+          "id": "GetHowMutchInOffice",
+          "codefile": "GetHowMutchInOffice.js"
+        },
+        {
+          "id": "GetHowMutchInDepartment",
+          "codefile": "GetHowMutchInDepartment.js"
+        },
+        {
+          "id": "GetDepartmentByOffice",
+          "codefile": "GetDepartmentByOffice.js"
+        },
+        {
+          "id": "GetPhoneByOffice",
+          "codefile": "GetPhoneByOffice.js"
+        },
+        {
+          "id": "GetPersonAge",
+          "text": "В системе не хранятся данные о возрасте сотрудников."
+        },
+        {
+          "id": "GetPersonDateOfBirth",
+          "text": "В системе не хранятся данные о датах рождения сотрудников."
+        },
+        {
+          "id": "OnNoIntent",
+          "text": "Нет данных в этом разрезе"
+        },
+        {
+          "id": "OnActionError",
+          "codefile": "OnActionError.js"
+        }
+      ]
+    }
+  ]
+}

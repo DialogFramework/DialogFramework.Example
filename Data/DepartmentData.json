@@ -1,0 +1,15 @@
+﻿{
+  "departments": [
+    {
+      "id": "1",
+      "name": "Главное управление",
+      "headOfDepartmentId": "1"
+    },
+    {
+      "id": "2",
+      "name": "Секретариат",
+      "headOfDepartmentId": "2"
+    }
+  ]
+
+}

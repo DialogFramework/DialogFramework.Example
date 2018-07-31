@@ -1,0 +1,11 @@
+﻿{
+"templates":
+[
+  {"id":"в <видеть что(кого)?>", "description": "в <видеть что(кого)?>", "set": "в <видеть что(кого)?>", "items":[{"lemma":{"token":"в", "POS":"PREP"}}, {"id":"NOUN", "POS":"NOUN", "Case":"accs"}]}
+  , {"id":"в <о чем(ком)?>", "description": "в <чем(ком)?>", "set": "в <чем(ком)?>", "items":[{"lemma":{"token":"в", "POS":"PREP"}}, {"id":"NOUN", "POS":"NOUN", "Case":"loct"}]}
+  , {"id":"для <нет чего(кого)?>", "description": "для <нет чего(кого)?>", "set": "для <нет чего(кого)?>", "items":[{"lemma":{"token":"для", "POS":"PREP"}}, {"id":"NOUN", "POS":"NOUN", "Case":"gent"}]}
+  , {"id":"у <нет чего(кого)?>", "description": "у <нет чего(кого)?>", "set": "у <нет чего(кого)?>", "items":[{"lemma":{"token":"у", "POS":"PREP"}}, {"id":"NOUN", "POS":"NOUN", "Case":"gent"}]}
+]
+}
+
+

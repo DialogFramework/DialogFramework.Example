@@ -1,0 +1,7 @@
+﻿{
+  "dictionaryfiles": [ "../../../../../OpenCorporaDict/dict.opcorpora.xml", "../../../../Data/dict.user.xml" ],
+  "grammarfiles": [ "../../../../Data/Grammar.Preps.json" ],
+  "dialogsfiles": [ "../../../../Data/PersonDialogs.json" ],
+  "personsdatafile": "../../../../Data/PersonData.json",
+  "departmenstdatafile": "../../../../Data/DepartmentData.json"
+}

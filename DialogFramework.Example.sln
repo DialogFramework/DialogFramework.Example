@@ -9,6 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DialogConsole", "DialogCons
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{3F992C52-FA5E-4500-88F5-809D6F350504}"
 	ProjectSection(SolutionItems) = preProject
+		Data\DepartmentData.json = Data\DepartmentData.json
 		Data\dict.user.xml = Data\dict.user.xml
 		Data\Grammar.Preps.json = Data\Grammar.Preps.json
 		Data\PersonData.json = Data\PersonData.json
